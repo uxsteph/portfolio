@@ -1,30 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Cardo:400,700|Lato:300');
 
-
-.container {
-  display: flex;
+/* ==========================================================================
+   Base styles:
+   ========================================================================== */
+/* Fix to include padding and border in the total width for each element */
+* {
+  box-sizing: border-box;
 }
 
-.text-wrapper {
+/* Fix for responsive images */
+img {
+  max-width: 100%;
+}
+
+.container {
+	/*display: flex;*/
+}
+
+.row {
   margin-top: 8vw;
   margin-left: 12vw;
-  width: 90%;
+  width: 80%;
   /*padding: 1vw;*/
 }
 
-label {
-	cursor: pointer;
-}
+/*label {*/
+	/*cursor: pointer;*/
+/*}*/
 
 #moreinfo1, #moreinfo2, #moreinfo3, #moreinfo4, #moreinfo5 {
   display: none;
 }
 
-a {
-	text-decoration: none;
+#arrow2, #arrow3, #arrow4, #arrow5 {
+	display: none;
 }
 
-#goldlink {
+a {
+	text-decoration: none;
+	color: #081437;
+	font-weight: bold;
+}
+
+.goldlink {
 	color: #da8c29;
 }
 
@@ -40,7 +58,7 @@ body {
 }
 
 
-h1 {
+/*h1 {
 	font-family: Cardo, serif;
 	font-size: 8vw;
 	color: #f7bab5;
@@ -48,7 +66,7 @@ h1 {
   animation: animation 1500ms linear both;
   -webkit-animation-delay: .3s;
   position: absolute;
-}
+}*/
 
 h2 {
   /*margin-top: 3vw;
@@ -69,12 +87,136 @@ p {
   /*width: initial;*/
   margin-left: 4vw;
   margin-top: 0;
+  letter-spacing: .08em;
+  font-weight: 300;
+}
+
+video {
+	margin-left: 4vw;
+	margin-bottom: 2vw;
 }
 
 ul {
   font-family: Lato, sans-serif;
   font-size: 2vw;
-  margin-left: 4vw;
+  margin-left: 2vw;
   list-style-type: none;
+}
+
+li {
+	padding: 1vw;
+}
+
+
+/* ----------------------------------------
+Buttons
+------------------------------------------- */
+.button--outline {
+	border: 2px solid #44545E;
+	font-size: 13px;
+	padding: 5px 20px;
+}
+
+.button--outline:hover {
+	background-color: #44545E;
+	color: #FFFFFF;
+}
+
+.fa-sm {
+	margin: 0 4px;
+}
+
+
+/* ==========================================================================
+   Responsiveness:
+   ========================================================================== */
+
+@media only screen and (max-width: 710px) {
+	.col-sm-full {
+		width: 100%;
+	}
+	
+	h2 {
+		font-size: 26px;
+	}
+
+	p, li {
+		font-size: 18px;
+	}
+
+	.arrow span {
+  		top: 0.65rem;
+  	}
+
+}
+
+@media screen and (max-width: 450px) {
+	.col-xs-full {
+		width: 100%;
+	}
+
+	h2 {
+		font-size: 20px;
+	}
+
+	p, li {
+		font-size: 16px;
+	}
+
+	.arrow span {
+  		top: 0.4rem;
+  	}
+
+  	.container {
+  		margin-left: 6vw;
+  	}
+
+  	video {
+  		margin-left: 0vw;
+  	}
+
+}
+
+/*// Arrow*/
+
+/*.wrap {
+	display: flex;
+	font-size: 20px;
+}
+*/
+.arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-block;
+  position: relative;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+.arrow span {
+  top: 0.7rem;
+  position: absolute;
+  width: 0.75rem;
+  height: 0.1rem;
+  background-color: #081437;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+.arrow span:first-of-type {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.arrow span:last-of-type {
+  right: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.arrow.active span:first-of-type {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.arrow.active span:last-of-type {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
